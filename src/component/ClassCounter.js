@@ -6,6 +6,16 @@ class ClassCounter extends Component {
         name: 'Basit Maqsood'
     }
 
+    componentDidMount() {
+        document.title = `Clicked ${this.state.counter} times`
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('----', prevProps, prevState)
+        document.title = `Clicked ${this.state.counter} times`;
+    }
+
+
     handleIncrement = () => {
         this.setState(prevState => {
             return {
