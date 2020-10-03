@@ -3,11 +3,14 @@ import React, { Component, Fragment } from 'react';
 class ClassCounter extends Component {
     state = {
         counter: 0,
-        name: ''
+        name: '',
+        x: 0,
+        y: 0
     }
 
     componentDidMount() {
-        document.title = `Clicked ${this.state.counter} times`
+        document.title = `Clicked ${this.state.counter} times`;
+        window.addEventListener('mousemove', this.logMousePosition);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -17,6 +20,13 @@ class ClassCounter extends Component {
             console.log('After Checking the condition')
             document.title = `Clicked ${this.state.counter} times`;
         }
+    }
+
+    logMousePosition = (e) => {
+        this.setState({
+            x: e.clientX,
+            y: e.clientY
+        })
     }
 
 
@@ -29,7 +39,7 @@ class ClassCounter extends Component {
     }
 
     render() {
-        const { counter, name } = this.state;
+        const { counter, name, x, y } = this.state;
         return (
             <Fragment>
                 <input type="text" value={name} onChange={(e) => {
@@ -42,6 +52,10 @@ class ClassCounter extends Component {
                     style={{ width: 400, height: 200, backgroundColor: 'green', color: 'white', fontWeight: 'bold', fontSize: 40 }}>
                     Increment {counter}
                 </button>
+                <div>
+                    <p>X: {x}</p>
+                    <p>Y: {y} </p>
+                </div>
             </Fragment>);
     }
 }
