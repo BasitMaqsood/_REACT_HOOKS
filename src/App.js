@@ -4,6 +4,7 @@ import CounterClass from './component/ClassCounter';
 import CounterHooks from './component/HooksCounter';
 import HooksCounterTwo from './component/HooksCounterTwo';
 import HooksCounterThree from './component/HooksCounterThree';
+import HooksCounterFour from './component/HooksCounterFour';
 
 import './App.css';
 
@@ -13,7 +14,8 @@ function App() {
       {/* <CounterClass /> */}
       {/* <CounterHooks /> */}
       {/* <HooksCounterTwo /> */}
-      <HooksCounterThree />
+      {/* <HooksCounterThree /> */}
+      <HooksCounterFour />
     </div>
   );
 }
