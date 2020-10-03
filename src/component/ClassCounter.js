@@ -22,6 +22,10 @@ class ClassCounter extends Component {
         }
     }
 
+    componentWillUnmount() {
+        window.removeEventListener('mousemove', this.logMousePosition);
+    }
+
     logMousePosition = (e) => {
         this.setState({
             x: e.clientX,
