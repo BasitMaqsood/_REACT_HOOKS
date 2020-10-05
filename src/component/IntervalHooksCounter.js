@@ -8,6 +8,7 @@ const IntervalHooksCounter = () => {
 
         // NOTE: a) If you want to call some function in useEffect define it in use effect 
         //       b) Don't forget use use prop in use-effect array
+        //       c) We can use multiple use-effects in same functional component
 
         const interval = setInterval(tick, 1000);
 
